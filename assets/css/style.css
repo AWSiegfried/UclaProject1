@@ -1,0 +1,64 @@
+body { 
+
+}
+
+.my-nav {
+    background-color: black;
+}
+
+.brand {
+    color: white;
+    font-family: sans-serif;
+    font-weight: 700;
+}
+
+#search {
+    border-radius: 25px;
+}
+
+#pop {
+    position: relative;
+}
+
+.button-genre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+    /* #show_bg_2 {
+        background-image:
+        linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+        url(aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg);
+        width: 80%;
+        height: 400px;
+        background-size: cover;
+        color: white;
+        padding: 20px;
+        background-size: cover
+    }
+         background-color: rgba(0, 0, 0, 0.44);
+
+         #show_bg_2 {
+            background-image:
+            linear-gradient(to bottom, rgba(245, 246, 252, 0.52), rgba(117, 19, 93, 0.73)),
+            url('aditya-chinchure-ZhQCZjr9fHo-unsplash');
+            width: 80%;
+            height: 400px;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+        } */
+
+        #overlay {
+            position: fixed; /* Sit on top of the page content */
+            display: none; /* Hidden by default */
+            width: 100%; /* Full width (cover the whole page) */
+            height: 100%; /* Full height (cover the whole page) */
+            top: 0; 
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+            z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+            cursor: pointer; /* Add a pointer on hover */
+          }
