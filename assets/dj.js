@@ -1,4 +1,4 @@
-var band = "sia";
+var band = "vexxum";
         var queryURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + band + "&key=AIzaSyCqnTeBwerTPbG_YE5Thd1tXFmNm0vx4zI";
         $.ajax({
             url: queryURL,
