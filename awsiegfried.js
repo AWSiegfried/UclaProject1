@@ -1,17 +1,47 @@
 $(document).ready(function() {
 
     var artistArray = [{
-            "name": "Bodily Ruin"
+            name: "Bodily Ruin"
         },
         {
-            "name": "Syn Abscence"
+            name: "Syn Abscence"
         },
         {
-            "name": "Holy Wretched"
+            name: "Holy Wretched"
         },
         {
-            "name": "Vexxum"
+            name: "Vexxum"
         },
+        {
+            name: "Brittany Akee",
+            genre: "pop",
+            bio: "My name is Brittany Akee, and I'm from St. Louis, MO. I sing, dance, play the piano and write music for upcoming artist throughout Los Angeles including myself. I have had several opportunities to sing back up for great artist such as: Michael Bolton, Nelly and Andre Cymone just to name a few. My music has allowed me to sing with a group of singers for Cedric 'The Entertainer' The Steve Harvey 'Little Big Shots' Show, and Craig Ferguson, 'The Late Late Show.'"
+        },
+        {
+            name: "Caleb Minter",
+            genre: "pop",
+            bio: "Independent artist Caleb Minter is no stranger to the 'Main Stream' music and entertainment industry. Caleb is a member of the legendary collective 'Sunday Service' formed and created by the ironic music genius Kanye West. He has graced the stage as the headline opener for Songstress Tweet in New York City, Anthony Hamilton & The Hamiltones, and Q Parker of rnb group 112. Rolling Out Magazine captured Caleb at his performance for the President of Ebony Magazine at the tribute to James Brown in Chicago, Illinois."
+        },
+        {
+            name: "Jonathan Moody",
+            genre: "country",
+            bio: "Jonathan Moody has made his vocation, his avocation.As a singing songwriter,his music reflects hope, dreams and reality, in a world that offers nothing less. Moody believes that turning life’s experiences into song makes them last forever and whether good or not, both can be celebratedthrough music. He embraces his audience in lyrics and melodies, knowing that once we discover ourselves, the world is ours…but we sometimes need a bit of help getting there.A genuine love of people makes him feel that sharing musical moments turns strangers into friends; while disconnecting from the norm reveals whom we really are. Moody has a passion for songwriting, but truly shines on stage."
+        },
+        {
+            name: "Patty Booker",
+            genre: "country",
+            bio: "With her fierce passion and vocal ability, Patty Booker represents a throwback to artists like Loretta Lynn and Brenda Lee. In other words, this honky tonker is the real deal. In 1992, she had a track on the compilation A Town South of Bakersfield Volume 3 alongside the likes of Dale Watson. However, it wasn't until 1999 as a grandmother in her mid-'40s that she would self-release her full-length LP, I Don't Need All That."
+        },
+        {
+            name: "Conc3ept",
+            genre: "hip-hip",
+            bio: "There are many ways to describe Conc3ept, but unique, talented, and charismatic just seem to scratch the surface. However, there is one word that ties him all together and is true to his character: Conc3ept is Real. Few people compose and infuse emotions and real passion in their music, real emotions coming from the heart and soul. Conc3ept does so in just the right way, combining art, story, and sound in perfect unison, to create unique songs. Take a look around the site, and explore what the gift of music truly is."
+        },
+        {
+            name: "MaLe Dane",
+            genre: "hip-hop",
+            bio: "Zsa Zsa Perkins, known as MaLe Dane/Black MaLe has recorded 2 albums : Live Fast, Die Pretty (2017) & Risky Business (2018). In addition, Dane has acted in TV Series such as HBO's Insecure (2018) & Westworld (2018). Dane signed to Money Bags Entertainment, early on as the artist formerly known as Cybil (2000). MaLe Dane's style compliments her music with an exotic, colorful & glamorous image true to her roots."
+        }
     ];
 
 
@@ -33,7 +63,7 @@ $(document).ready(function() {
 
         //Pull URI by searching name.  NOTE: If they use a space you have to convert it to "%20" for it to work. Remember to test
         var accessToken = response.access_token;
-        var artistName = "johnan%20sebastian%20bach"
+        var artistName = "male+dane";
         var queryURLSearch = "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist";
         $.ajax({
             crossDomain: true,
@@ -46,7 +76,7 @@ $(document).ready(function() {
             // console.log(response.artists.items[0].id);
 
             //Picture of band
-            var imageURL = response.artists.items[0].images[2].url;
+            var imageURL = response.artists.items[0].images[1].url;
             var image = $("<img>");
             image.attr("src", imageURL);
             $("body").append(image);
