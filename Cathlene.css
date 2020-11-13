@@ -1,11 +1,11 @@
 * {
-    background-color: black;
     color: white;
   }
   
   #mainimage {
-      background: url("../img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");
+      background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");
       width: 100%;
+      padding-top: 100px;
       background-size: cover;
       height: 100vh;
   }
@@ -14,6 +14,11 @@
         position: relative;
         top: 0;
         left: 0;
+  }
+
+  .concert {
+    border-radius: 25px;
+    width: 200px;
   }
   
   #overlay {
@@ -41,4 +46,8 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
+  }
+
+  .sample {
+      width: 100%;
   }
