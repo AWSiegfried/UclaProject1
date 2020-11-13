@@ -1,9 +1,6 @@
 $(document).ready(function() {
 
     var artistArray = [{
-            "name": "Deified"
-        },
-        {
             "name": "Bodily Ruin"
         },
         {
@@ -34,7 +31,7 @@ $(document).ready(function() {
 
         //Pull URI by searching name.  NOTE: If they use a space you have to convert it to "%20" for it to work. Remember to test
         var accessToken = response.access_token;
-        var artistName = "vexxum"
+        var artistName = "vexxum";
         var queryURLSearch = "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist";
         $.ajax({
             crossDomain: true,
@@ -49,7 +46,10 @@ $(document).ready(function() {
             //Get Top Tracks via the URI
             var artistURI = response.artists.items[0].id;
             var queryTopTracks = "https://api.spotify.com/v1/artists/" + artistURI + "/top-tracks?country=US";
-
+            var imageURL = response.artists.items[0].images[0].url;
+            var image = $("<img>");
+            image.attr("src", imageURL);
+            $("body").append(image);
             $.ajax({
                 crossDomain: true,
                 headers: { "Content-Type": "application/json", "Authorization": "Bearer " + accessToken },
