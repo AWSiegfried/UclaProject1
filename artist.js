@@ -409,6 +409,11 @@ $.ajax({
             localStorage.setItem("favorites", JSON.stringify(favArray));
         })
 
+        var redirect = "yess.html";
+        $("#home").on("click", function() {
+            window.location.href = redirect;
+        })
+
 });
 
 
