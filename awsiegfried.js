@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     var artistArray = [{
-          name: "Bodily Ruin",
+            name: "Bodily Ruin",
             genre: "metal",
             bio: "'Death, at its finest, blossoms in a place that's cold and dark, where a candle offers grace.'  Bodily Ruin is a brutal death metal band from North Hollywood, that putts on a spectacle every night they play with lit candles to set the ambiance and ear-piercing death whistles to give you goosebumps while you mosh.",
         },
@@ -59,7 +59,8 @@ $(document).ready(function() {
             name: "MaLe Dane",
             genre: "hip-hop",
             bio: "Zsa Zsa Perkins, known as MaLe Dane/Black MaLe has recorded 2 albums : Live Fast, Die Pretty (2017) & Risky Business (2018). In addition, Dane has acted in TV Series such as HBO's Insecure (2018) & Westworld (2018). Dane signed to Money Bags Entertainment, early on as the artist formerly known as Cybil (2000). MaLe Dane's style compliments her music with an exotic, colorful & glamorous image true to her roots."
-        }];
+        }
+    ];
 
 
 
@@ -80,7 +81,7 @@ $(document).ready(function() {
 
         //Pull URI by searching name.  NOTE: If they use a space you have to convert it to "%20" for it to work. Remember to test
         var accessToken = response.access_token;
-        var artistName = "male+dane";
+        var artistName = "arschspire";
         var queryURLSearch = "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist";
         $.ajax({
             crossDomain: true,
@@ -101,6 +102,10 @@ $(document).ready(function() {
             //Get Top Tracks via the URI
             var artistURI = response.artists.items[0].id;
             var queryTopTracks = "https://api.spotify.com/v1/artists/" + artistURI + "/top-tracks?country=US";
+
+            //Add URI to embed code
+            var embedSrc = "https://open.spotify.com/embed/artist/" + artistURI
+            $("#embedlink").attr("src", embedSrc);
 
             $.ajax({
                 crossDomain: true,
