@@ -78,6 +78,7 @@ $(".genre-button").on("click", function() {
 
 $(document).on("click", ".delete", function() {
     console.log("working");
+    selected = [];
     $("#modal-genre").remove();
     $("#artist-options").remove();
     $(".artist-select").remove();
