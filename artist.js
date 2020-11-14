@@ -4,7 +4,7 @@ $(document).ready(function() {
     console.log(artist);
     for (var i = 0; i < artistArray.length; i++) {
         if (artistArray[i].name === artist) {
-            $(".artist-name").text(artistArray[i].name);
+            $(".artist-name").text("Emergence - " + artistArray[i].name);
             $(".bio").text(artistArray[i].bio);
             genre = artistArray[i].genre;
         }

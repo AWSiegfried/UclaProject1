@@ -41,7 +41,7 @@ body {
     color: white;
 }
 
-.dropdown-item:hover {
+.dropdown-item, .delete:hover {
     cursor: pointer;
 }
 

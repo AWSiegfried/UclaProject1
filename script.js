@@ -52,30 +52,35 @@ $(document).on("click", ".fa-backspace", function(event) {
 $(".genre-button").on("click", function() {
     var city = $("#search-input").val();
     var genre = $(this).data("genre");
-    console.log(genre);
+    var modalGenre = $("<h2>");
+    modalGenre.attr("id", "modal-genre");
+    modalGenre.text(genre);
+    var artistOptions = $("<div>");
+    artistOptions.attr("id", "artist-options");
+    var closeBtn = $("<span>");
+    closeBtn.addClass("fas fa-window-close delete float-right");
+    modalGenre.append(closeBtn);
     for (var i = 0; i < artistArray.length; i++) {
         if (artistArray[i].genre === genre) {
             selected.push(artistArray[i].name);
         }
     }
     for (var i = 0; i < selected.length; i++) {
-        $("#modal-genre").text(genre);
-        var closeBtn = $("<span>");
-        closeBtn.addClass("fas fa-window-close delete float-right");
-        $("#modal-genre").append(closeBtn);
         var artistName = selected[i];
         var element = $("<h3>");
         element.addClass("artist-select");
         element.text(artistName);
-        $("#search-modal").append(element);
+        artistOptions.append(element);
+        $("#search-modal").append(modalGenre, artistOptions);
     }
     $("#search-modal").css("display", "block");
 });
 
 $(document).on("click", ".delete", function() {
     console.log("working");
-    $("#modal-genre").text("");
+    $("#modal-genre").remove();
     $("#artist-options").remove();
+    $(".artist-select").remove();
     $("#search-modal").css("display", "none");
 });
 
