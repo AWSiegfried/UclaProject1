@@ -1,9 +1,10 @@
 * {
     color: white;
+    font-family: 'Lato', sans-serif;
   }
   
   #mainimage {
-      background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");
+      background: url("assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg");
       width: 100%;
       padding-top: 100px;
       background-size: cover;

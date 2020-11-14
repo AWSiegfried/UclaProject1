@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./Cathlene.css"/>
-  <title></title>
+  <title class="artist-name"></title>
 </head>
 <body>
   <!-- overlay effect begins here -->
@@ -18,14 +20,16 @@
      <div class="row">
        <div class="col-md-12">
          <div class="page-header">
-            <h1>Band/Artist</h1>
+            <h1 class="artist-name">Artist Page</h1>
           </div>
             <div class="row">
               <div class="col-md-3">
                 <img class="concert" src="https://i.picsum.photos/id/453/2048/1365.jpg?hmac=A8uxtdn4Y600Z5b2ngnn9hCXAx8sUnOVzprtDnz6DK8" alt="Artist Image" class="img-thumbnail">
               </div>
                 <div class="col-md-9 text-info">
-                    <p class="sample float-right text-right">Sample Music</p>
+                    <div class="sample float-right text-right">Sample Music
+                    <div id="song-goes-here"></div>
+                    </div>
                     <button class="button float-right">Play</button>
                     <p class="bio float-left">Insert short bio about the band/artist.
                      </p>
@@ -33,7 +37,31 @@
                </div>
             </div>
         </div>
-       
+
+        <iframe id="youtube" width='560' height='315' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen></iframe>
+       <button class="btn btn-dark" id="favorites">Add To Favorites</button>
     </div>
+
+    <div id="ONBUTTONCLICK">
+      <!--Play the Song-->
+      <!--<div id="song-goes-here"></div>-->
+  </div>
+  <div>
+      <h1>Top Track Audio Features</h1>
+  </div>
+  <div class="row">
+      <div id="chartDiv1" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+      <div id="chartDiv2" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+      <div id="chartDiv3" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+  </div>
+  <div class="row">
+      <div id="chartDiv4" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+      <div id="chartDiv5" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+      <div id="chartDiv6" class="col-md-2 col-sm-12" style="width: 25%; height: 300px;"></div>
+  </div>
+    <script src="https://code.jscharting.com/latest/jscharting.js"></script>
+    <script src="artistArray.js"></script>
+    <script src="script.js"></script>
+    <script src="artist.js"></script>
 </body>
 </html>

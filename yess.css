@@ -11,27 +11,50 @@ body {
 }
 
 #tagline {
-    font-size: 300;
+    font-weight: 300;
     color: rgb(22, 254, 22);
     font-size: 20px;
     margin-left: 20px;
-    letter-spacing: 2px;;
+    letter-spacing: 2px;
 }
 
 .navbar-toggler {
     border: none;
 }
 
-/* #pop div {
-    height: 200px;
-    width: 200px;
-} */
+#saved {
+    margin-top: -7vh;
+    font-size: 50px;
+}
 
-/* .brand{
+.fa-bars {
+    transform: scale(1.75);
+    margin-right: 5px;
+}
+
+.dropdown-menu {
+    background-color: black;
+    font-size: 18px;
+}
+
+.dropdown-item {
     color: white;
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 700;
-} */
+}
+
+.dropdown-item:hover {
+    cursor: pointer;
+}
+
+#dropdown-header:hover {
+    background-color: black !important;
+    color: white !important;
+    cursor: default;
+}
+
+.fa-backspace:hover {
+    color: rgb(22, 254, 22);
+}
+
 #mainimage {
     background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");
     width: 100%;
@@ -92,7 +115,6 @@ img {
     bottom: 0;
     background-color: rgba(0,0,0,0.5); /* Black background with opacity */
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-    /*cursor: pointer; /* Add a pointer on hover */
 }
 
 /* new buttons */
@@ -148,12 +170,16 @@ img {
 
   #artist-options {
       padding-top: 10vh;
+  }
+
+  .artist-select {
+      font-size: 3vw;
+      line-height: 10vh;
       text-align: center;
   }
 
-  #artist-options h3 {
-      font-size: 3vw;
-      line-height: 10vh;
+  .artist-select:hover {
+      cursor: pointer;
   }
   
   .image {
@@ -197,9 +223,7 @@ img {
      background-color: none;
      color:white;
      font-size: 2.5vw;
-     /*padding: 16px 32px;*/
      font-weight: 900;
-     /*font-family: Arial, Helvetica, sans-serif;*/
      letter-spacing: 2px;
      z-index: 5;
  } 
