@@ -1,13 +1,17 @@
 $(document).ready(function() {
+
+    // Get's what artist's page to render from local storage
     var artist = localStorage.getItem("selected");
     var genre = "";
-    console.log(artist);
+
     for (var i = 0; i < artistArray.length; i++) {
         if (artistArray[i].name === artist) {
             $("#artist-page").text("Emergence - " + artistArray[i].name);
             $(".artist-name").text(artistArray[i].name);
             $(".bio").text(artistArray[i].bio);
             genre = artistArray[i].genre;
+
+            // Changes text color based on genre
             switch (genre) {
                 case 'POP':
                     $(".artist-name").addClass("pop");
@@ -36,36 +40,37 @@ $(document).ready(function() {
                 default:
                     return;
                     break;
-            }
-        }
-    }
+            };
+        };
+    };
 
+    // For the sake of the API searches, any spaces are replaced with a plus sign
     var artistName = artist.split(" ").join("+");
-//     var apiKey = "AIzaSyA-K-uygPmNrWN_08VKkrItCo9J0R9P8RA";
-//     var youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + artistName + "+" + genre + "+music" + "&key=" + apiKey;
-//     console.log(youtubeURL);
-// $.ajax({
-//     url: youtubeURL,
-//     method: "GET"
-// }).then(function(response) {
-//     console.log(response);
-//     var results = response.items;
-//     function checkVideo() {
-//         for (var i = 0; i < results.length; i++) {
-//             if (results[i].id.kind === "youtube#video") {
-//                 return results[i].id.videoId;
-//             }
-//         }
-//     };
-//     var videoSrc = "https://www.youtube.com/embed/" + checkVideo();
-//     $("#youtube").attr("src", videoSrc);
-// })
+    var apiKey = "AIzaSyA-K-uygPmNrWN_08VKkrItCo9J0R9P8RA";
+    var youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + artistName + "+" + genre + "+music" + "&key=" + apiKey;
+$.ajax({
+    url: youtubeURL,
+    method: "GET"
+}).then(function(response) {
+    var results = response.items;
+
+    /* Checks that the item is a video, and if it is not, moves to the next item 
+       (this is because I kept getting specific channels rather than videos) */
+    function checkVideo() {
+        for (var i = 0; i < results.length; i++) {
+            if (results[i].id.kind === "youtube#video") {
+                return results[i].id.videoId;
+            };
+        };
+    };
+    var videoSrc = "https://www.youtube.com/embed/" + checkVideo();
+    $("#youtube").attr("src", videoSrc);
+});
 
 
 
         //Get API Token authorization
         var queryURL = "https://accounts.spotify.com/api/token";
-        // console.log(btoa("405db04ed80d417eaf4b3ad25920ddfb:9e36a2bafb2d430ab61d9dd6a891fe47"));
     
         $.ajax({
             crossDomain: true,
@@ -74,7 +79,6 @@ $(document).ready(function() {
             method: "POST",
             data: { "grant_type": "client_credentials" }
         }).then(function(response) {
-            // console.log(response);
     
             //Pull URI by searching name.  NOTE: If they use a space you have to convert it to "%20" for it to work. Remember to test
             var accessToken = response.access_token;
@@ -87,7 +91,6 @@ $(document).ready(function() {
             }).then(function(response) {
                  console.log(response);
                 //THIS IS THE URI - response.artists.items[0].id
-                // console.log(response.artists.items[0].id);
     
                 //Picture of band
                 var imageURL = response.artists.items[0].images[1].url;
@@ -97,7 +100,7 @@ $(document).ready(function() {
                 var artistURI = response.artists.items[0].id;
                 var queryTopTracks = "https://api.spotify.com/v1/artists/" + artistURI + "/top-tracks?country=US";
                 
-                var embedSrc = "https://open.spotify.com/embed/artist/" + artistURI
+                var embedSrc = "https://open.spotify.com/embed/artist/" + artistURI;
                 $("#embedlink").attr("src", embedSrc);
 
                 $.ajax({
@@ -131,7 +134,7 @@ $(document).ready(function() {
                     for (var i = 0; i < response.tracks.length; i++) {
                         // console.log(response.tracks[i].id)
     
-                        var specifcTrackURI = response.tracks[i].id
+                        var specifcTrackURI = response.tracks[i].id;
                         var audioFeaturesURL = "https://api.spotify.com/v1/audio-features/" + specifcTrackURI;
     
                         //Pull All Datapoints
@@ -147,8 +150,8 @@ $(document).ready(function() {
                             topTracksLoud.push(response.loudness);
                             topTracksTempo.push(response.tempo);
                             topTracksIns.push(response.instrumentalness);
-                        })
-                    }
+                        });
+                    };
                     console.log(topTracksDance);
     
                     //Push averages to new array
@@ -168,7 +171,7 @@ $(document).ready(function() {
                             var sumtopTracksDance = topTracksDance.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksDance = sumtopTracksDance / topTracksDance.length
+                            var averagetopTracksDance = sumtopTracksDance / topTracksDance.length;
                             danceSum.push(averagetopTracksDance);
                             // console.log(averagetopTracksDance);
     
@@ -176,36 +179,36 @@ $(document).ready(function() {
                             var sumtopTracksVal = topTracksVal.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksVal = sumtopTracksVal / topTracksVal.length
-                            valenceSum.push(averagetopTracksVal)
+                            var averagetopTracksVal = sumtopTracksVal / topTracksVal.length;
+                            valenceSum.push(averagetopTracksVal);
     
                             //topTracksEnergy
                             var sumtopTracksEnergy = topTracksEnergy.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksEnergy = sumtopTracksEnergy / topTracksEnergy.length
-                            energySum.push(averagetopTracksEnergy)
+                            var averagetopTracksEnergy = sumtopTracksEnergy / topTracksEnergy.length;
+                            energySum.push(averagetopTracksEnergy);
     
                             //topTracksLoudness
                             var sumtopTracksLoud = topTracksLoud.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksLoud = sumtopTracksLoud / topTracksLoud.length
-                            loudnessSum.push(averagetopTracksLoud)
+                            var averagetopTracksLoud = sumtopTracksLoud / topTracksLoud.length;
+                            loudnessSum.push(averagetopTracksLoud);
     
                             //topTracksTempo
                             var sumtopTracksTempo = topTracksTempo.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksTempo = sumtopTracksTempo / topTracksTempo.length
-                            tempoSum.push(averagetopTracksTempo)
+                            var averagetopTracksTempo = sumtopTracksTempo / topTracksTempo.length;
+                            tempoSum.push(averagetopTracksTempo);
     
                             //topTracksInstrumentalness
                             var sumtopTracksIns = topTracksIns.reduce(function(a, b) {
                                 return a + b;
                             }, 0);
-                            var averagetopTracksIns = sumtopTracksIns / topTracksIns.length
-                            instrumentalnessSum.push(averagetopTracksIns)
+                            var averagetopTracksIns = sumtopTracksIns / topTracksIns.length;
+                            instrumentalnessSum.push(averagetopTracksIns);
     
                             //Make aggregates out of 100
                             //Dance Level
@@ -217,11 +220,11 @@ $(document).ready(function() {
                                 var valLevel = ((valenceSum - .5) * 200).toFixed(0);
                             } else {
                                 var valLevel = ((.5 - valenceSum) * 200).toFixed(0);
-                            }
+                            };
                             console.log(valLevel);
     
                             //Energy Level
-                            var energyLevel = (energySum * 100).toFixed(0)
+                            var energyLevel = (energySum * 100).toFixed(0);
                             console.log(energyLevel);
     
                             //Loudness Level
@@ -265,7 +268,7 @@ $(document).ready(function() {
                                         label: { 
                                             text: '%value',
                                             'font-size': '32px'
-                                     }
+                                        }
                                     },
     
                                     points: [{
@@ -459,35 +462,37 @@ $(document).ready(function() {
                     //Need to delay the averages or else it tries to run them with empty arrays
                     timeDelay();
     
-                })
+                });
     
             });
-        })
+        });
+
         var favArray = [];
+
+        // Checks local storage for any existing saved artists
         var checkStorage = JSON.parse(localStorage.getItem("favorites"));
         if (checkStorage) {
             checkStorage.forEach(function(artist) {
                 favArray.push(artist);
-            })
-        }
+            });
+        };
         localStorage.setItem("favorites", JSON.stringify(favArray));
 
+        // When clicked, this adds the artist to the user's saved artists
         $("#favorites").on("click", function() {
             if (!favArray.includes(artist)) {
                 favArray.push(artist);
-            }
+            };
             console.log(favArray);
             localStorage.setItem("favorites", JSON.stringify(favArray));
-        })
+        });
 
-        var redirect = "yess.html";
-        $("#home").on("click", function() {
-            window.location.href = redirect;
-        })
+        var redirect = "index.html";
 
+        // When clicked, redirects the user back to the home page
         $("#emergence").on("click", function() {
-            window.location.href = "./yess.html";
-        })
+            window.location.href = redirect;
+        });
 });
 
 
