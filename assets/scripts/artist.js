@@ -163,16 +163,6 @@ $(document).ready(function() {
                 }).then(function(response) {
                         console.log(response);
                         //BE WARY, AS SOME CAN COME BACK NULL
-                        // console.log(response.tracks[0].preview_url);
-                        // var songPlayer = $("<audio>");
-                        // songPlayer.attr("id", "js-player")
-                        // songPlayer.attr("src", response.tracks[0].preview_url);
-                        // songPlayer.attr("controls", "controls");
-                        // var songTitle = $("<p>");
-                        // songTitle.text(response.tracks[0].name);
-                        // // songPlayer.attr("autoplay", "Y")
-                        // // console.log(songPlayer);
-                        // $("#song-goes-here").append(songPlayer, songTitle);
 
                         //Beginning Journey to create graphs
                         //Pull track id for top ten (max) songs
