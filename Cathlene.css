@@ -1,58 +1,65 @@
 * {
     color: white;
     font-family: 'Lato', sans-serif;
-  }
+}
 
-  body {
+body {
     background: url(assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-  }
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
 
-  #emergence:hover {
+#emergence:hover {
     cursor: pointer;
-  }
-  
-  #mainimage {
-      /*background: url("assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg");*/
-      width: 100%;
-      padding-top: 100px;
-      /*background-size: cover;*/
-      height: 100vh;
-  }
+}
 
-  main {
+#mainimage {
+    /*background: url("assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg");*/
+    width: 100%;
+    padding-top: 100px;
+    /*background-size: cover;*/
+    height: 100vh;
+}
+
+main {
     margin-left: 25vw;
-  }
-  
-  img {
-        position: relative;
-        top: 0;
-        left: 0;
-  }
+}
 
-  .concert {
+img {
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.concert {
     border-radius: 25px;
     width: 200px;
-  }
-  
-  #overlay {
-      position: fixed; /* Sit on top of the page content */
-      display: none; /* Hidden by default */
-      width: 100%; /* Full width (cover the whole page) */
-      height: 100%; /* Full height (cover the whole page) */
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background-color: rgba(0,0,0,0.5); /* Black background with opacity */
-      z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
-      cursor: pointer; /* Add a pointer on hover */
-            }
-  
-  .button {
+}
+
+#overlay {
+    position: fixed;
+    /* Sit on top of the page content */
+    display: none;
+    /* Hidden by default */
+    width: 100%;
+    /* Full width (cover the whole page) */
+    height: 100%;
+    /* Full height (cover the whole page) */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Black background with opacity */
+    z-index: 2;
+    /* Specify a stack order in case you're using a different order for other elements */
+    cursor: pointer;
+    /* Add a pointer on hover */
+}
+
+.button {
     border-radius: 15px;
     background-color: green;
     color: white;
@@ -63,15 +70,15 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-  }
+}
 
-  .sample {
-      width: 100%;
-  }
+.sample {
+    width: 100%;
+}
 
-  #emergence {
-    font-size: 25px; 
-    color:white; 
+#emergence {
+    font-size: 25px;
+    color: white;
     margin-top: 15px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -95,7 +102,7 @@
 }
 
 .btn-group {
-  background-color: black;
+    background-color: black;
 }
 
 .fa-bars {
@@ -112,7 +119,8 @@
     color: white;
 }
 
-.dropdown-item, .delete:hover {
+.dropdown-item,
+.delete:hover {
     cursor: pointer;
 }
 
@@ -127,62 +135,75 @@
 }
 
 .navbar {
-  background-color: black;
-  z-index: 5;
+    background-color: black;
+    z-index: 5;
 }
 
 .bio {
-  text-shadow: 5px 5px 10px rgb(55, 53, 53);
-  background-color: black;
-  border-radius: 30px;
-  opacity: 0.8;
-  padding: 10px;
-  font-size: 1.5vw;
-  width: 100%;
+    text-shadow: 5px 5px 10px rgb(55, 53, 53);
+    background-color: black;
+    border-radius: 30px;
+    opacity: 0.8;
+    padding: 10px;
+    font-size: 1.5vw;
+    width: 100%;
 }
 
 #bio-section {
-  margin-left: 2vw;
-  width: 50vw;
-  min-width: 400px;
-  text-align: center;
+    margin-left: 2vw;
+    width: 50vw;
+    min-width: 400px;
+    text-align: center;
 }
 
 .artist-name {
-  font-size: 7vw;
-  padding-top: 2vh;
+    font-size: 7vw;
+    padding-top: 2vh;
 }
 
 #charts {
-  margin-top: 15vh;
-  margin-left: 25vw;
-  width: 100%;
+    margin-top: 15vh;
+    margin-left: 25vw;
+    width: 100%;
 }
 
 #toptracks {
-  margin-left: 12.5vw;
+    margin-left: 12.5vw;
 }
 
 .pop {
-  color: rgb(248, 43, 156);
+    color: rgb(248, 43, 156);
 }
 
 .rock {
-  color: rgb(67, 246, 238);
+    color: rgb(67, 246, 238);
 }
 
 .rap {
-  color: rgb(185, 42, 247);
+    color: rgb(185, 42, 247);
 }
 
 .hip-hop {
-  color: rgb(22, 254, 22);
+    color: rgb(22, 254, 22);
 }
 
 .country {
-  color: rgb(241, 37, 56);
+    color: rgb(241, 37, 56);
 }
 
 .metal {
-  color: rgb(242, 92, 1);
+    color: rgb(242, 92, 1);
 }
+
+svg>g>g>path {
+    fill: transparent !important;
+}
+
+
+/* #JSCharting_75159>svg>g>g:nth-child(1)>g:nth-child(2)>g>g>g:nth-child(2)>g:nth-child(2)>g:nth-child(9)>g>g>g>g:nth-child(1)>path {
+    stroke-width: 10px;
+}
+
+#JSCharting_48917>svg>g>g:nth-child(1)>g:nth-child(2)>g>g>g:nth-child(2)>g:nth-child(2)>g:nth-child(9)>g>g>g>g:nth-child(1)>g>g>path {
+    font-size: 10px;
+} */
