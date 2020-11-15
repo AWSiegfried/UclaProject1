@@ -17,7 +17,7 @@ body {
 
 #tagline {
     font-weight: 300;
-    color: rgb(22, 254, 22);
+    color: rgb(67, 246, 238);
     font-size: 20px;
     margin-left: 20px;
     letter-spacing: 2px;
@@ -57,7 +57,7 @@ body {
 }
 
 .fa-backspace:hover {
-    color: rgb(22, 254, 22);
+    color: rgb(67, 246, 238);
 }
 
 #mainimage {

@@ -46,24 +46,14 @@ body {
 .bio {
     text-align: left;
     font-size: 20px;
-    width: 100%;
 }
   
 #bio-section {
-    margin-top: 4.5vh;
-    margin-left:3.5vw;
-    width: 35vw;
-    min-width: 400px;
+    width: 90%;
 }
   
 .artist-name {
     font-size: 7vw;
-    /*margin-top: 7vh;
-    margin-left: 3vw;*/
-    
-}
-
-#youtube {
 }
 
 #overlay {
@@ -90,10 +80,19 @@ body {
 
 #tagline {
     font-weight: 300;
-    color: rgb(22, 254, 22);
+    color: rgb(67, 246, 238);
     font-size: 20px;
     margin-left: 20px;
     letter-spacing: 2px;
+}
+
+#favorites {
+    background-color: rgb(67, 246, 238);
+    color: black;
+}
+
+#favorites:hover {
+    background-color: rgb(62, 208, 201);
 }
 
 .navbar {
@@ -102,14 +101,10 @@ body {
 }
   
 #charts {
-    margin-top: 15vh;
-    margin-left: 25vw;
     width: 100%;
 }
   
 #toptracks {
-    margin-top: 60vh;
-    margin-left: 12.5vw;
 }
   
 .pop {
