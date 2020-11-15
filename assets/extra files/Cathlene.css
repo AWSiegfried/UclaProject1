@@ -50,9 +50,9 @@
       background-color: rgba(0,0,0,0.5); /* Black background with opacity */
       z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
       cursor: pointer; /* Add a pointer on hover */
-            }
+}
   
-  .button {
+  /*.button {
     border-radius: 15px;
     background-color: green;
     color: white;
@@ -63,7 +63,7 @@
     margin: 4px 2px;
     transition-duration: 0.4s;
     cursor: pointer;
-  }
+  }didn't copy */
 
   .sample {
       width: 100%;

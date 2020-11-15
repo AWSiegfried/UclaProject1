@@ -1,6 +1,6 @@
 body { 
     font-family: 'Lato', sans-serif;
-    background: url(assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg) no-repeat center center fixed;
+    background: url(img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -61,52 +61,25 @@ body {
 }
 
 #mainimage {
-    /*background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");*/
     width: 100%;
-    /*background-size: cover;*/
     height: 100vh;
     padding-top: 100px;
 }
+
 .navbar {
     background-color: black;
     z-index: 5;
 }
 
 img {
-      position: relative;
-      top: 0;
-      left: 0;
-      box-shadow: 2px 2px 10px 1px black;
-}
-#pop {
-      position: absolute;
-      top: 60px;
-      left: 80px;
+    position: relative;
+    top: 0;
+    left: 0;
+    box-shadow: 2px 2px 10px 1px black;
 }
 
 .form-inline, .form-inline input , .form-inline button{
-    z-index:5 !important;
-}
-/* .brand {
-    color: white;
-    font-family: sans-serif;
-    font-weight: 700;
-} */
-
-#search {
-    border-radius: 25px;
-    z-index: 5;
-}
-
-#pop {
-    position: relative;
-}
-
-.button-genre {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    z-index: 5;
+    z-index:3 !important;
 }
 
 #overlay {
@@ -122,78 +95,77 @@ img {
     z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
 }
 
-/* new buttons */
-
 .container {
     position: relative;
     width: 50%;
   }
 
   #center {
-      margin-left: 35%;
-  }
+    margin-left: 35%;
+}
 
-  #search-input {
-      width: 15vw;
-      text-align: center;
-      box-shadow: 2px 2px 10px 1px black;
-  }
+#search-input {
+    width: 15vw;
+    text-align: center;
+    box-shadow: 2px 2px 10px 1px black;
+}
 
-  @media (max-width: 775px) {
-      #search-input {
-          width: 45.5vw;
-      }
-      #center {
-          margin-left: 5%;
-      }
-  }
+@media (max-width: 775px) {
+    #search-input {
+        width: 45.5vw;
+    }
+    #center {
+        margin-left: 5%;
+    }
+}
 
-  @media (max-width: 581px) {
-      .dropdown {
-          margin-left: 36vw;
-      }
-  }
+@media (max-width: 581px) {
+    .dropdown {
+        margin-left: 36vw;
+    }
+}
 
-  #search-modal {
-      width: 40vw;
-      height: 75vh;
-      position: fixed;
-      left: 30vw;
-      top: 10vh;
-      display: none;
-      background-color: black;
-      color: white;
-      z-index: 6;
-      opacity: 0.9;
-      overflow: scroll;
-  }
+#search-modal {
+    width: 40vw;
+    height: 75vh;
+    position: fixed;
+    left: 30vw;
+    top: 10vh;
+    display: none;
+    background-color: black;
+    color: white;
+    z-index: 6;
+    opacity: 0.9;
+    overflow: scroll;
+}
 
-  #modal-genre {
-      text-align: center;
-      padding-top: 1.8vh;
-      padding-left: 3vw;
-  }
+#modal-genre {
+    text-align: center;
+    padding-top: 1.8vh;
+    padding-left: 3vw;
+}
 
-  .fa-window-close {
-      padding-top: 1vh;
-      padding-right: 2vw;
-  }
+.fa-window-close {
+    padding-top: 1vh;
+    padding-right: 2vw;
+    color: white !important;
+}
 
-  #artist-options {
-      padding-top: 10vh;
-  }
+#artist-options {
+    padding-top: 10vh;
+}
 
-  .artist-select {
-      font-size: 3vw;
-      line-height: 10vh;
-      text-align: center;
-  }
+.artist-select {
+    font-size: 3vw;
+    line-height: 10vh;
+    text-align: center;
+}
 
-  .artist-select:hover {
-      cursor: pointer;
-  }
-  
-  .image {
+.artist-select:hover {
+    cursor: pointer;
+}
+
+.image {
     opacity: 1;
     display: block;
     width: 100%;
@@ -201,7 +173,7 @@ img {
     transition: .5s ease;
     backface-visibility: hidden;
     border-radius: 12px;
-    z-index: 5;
+    z-index: 3;
   }
   
   .middle {
@@ -245,12 +217,35 @@ img {
     border-radius: 15px;
     padding: 7px;
   }
-  /* end of the buttons */
 
   .top-row {
-      margin-bottom: 20px;
-  }
+    margin-bottom: 20px;
+}
 
-  .top-room{
-      margin-top: 80px;
+.top-room{
+    margin-top: 80px;
+}
+
+.pop {
+    color: rgb(248, 43, 156);
+  }
+  
+  .rock {
+    color: rgb(67, 246, 238);
+  }
+  
+  .rap {
+    color: rgb(185, 42, 247);
+  }
+  
+  .hip-hop {
+    color: rgb(22, 254, 22);
+  }
+  
+  .country {
+    color: rgb(241, 37, 56);
+  }
+  
+  .metal {
+    color: rgb(242, 92, 1);
   }
