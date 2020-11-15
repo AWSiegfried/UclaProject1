@@ -15,7 +15,7 @@ $(document).ready(function() {
 
         //Pull URI by searching name.  NOTE: If they use a space you have to convert it to "%20" for it to work. Remember to test
         var accessToken = response.access_token;
-        var artistName = "triangle%20fire";
+        var artistName = "triangle%20fire";//took out so it takes artistName from user input
         var queryURLSearch = "https://api.spotify.com/v1/search?q=" + artistName + "&type=artist";
         $.ajax({
             crossDomain: true,
