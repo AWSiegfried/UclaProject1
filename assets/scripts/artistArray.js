@@ -69,4 +69,41 @@ var artistArray = [{
       city: "LOS ANGELES",
       genre: "HIP-HOP",
       bio: "Nicknamed 'Medicine Girl' for her narcotically minded writing, Carolyn Rodriguez is a street-smart singer and rapper who naturally fit into the Houston rap scene despite being raised in North Carolina and Arkansas. After she graduated from high school, Rodriguez relocated to Huntsville, Texas to attend Sam Houston State (from where she would graduate with an accounting degree). She caught the attention of  affiliate Jaime 'Pain' Ortiz, who recorded a first demo that led to work with  and South Park Mexican, among several other Texas-based artists. At some point, Rodriguez left the Lone Star State for Los Angeles, but she continued to record with members of her Southwest family, as heard on the  and  collaboration 'Houston' (2017). "
-  }];
+  },
+  {
+    name: "Airspace",
+    city: "PHILADELPHIA",
+    genre: "ROCK",
+    bio: "There are two kinds of bands: those that make a point to solely focus on the music as to not seem insincere, and those that are more focused on presenting the band as a piece of art rather than a music producing entity. Airspace is a rare case that seamlessly blurs the line between the two while maintaining artistic integrity, sincerity, and strong emotional expression. Whether it’s through their adrenaline pumping live show that always leaves audiences wanting more, or their goose-bump inducing recordings, Airspace always aims to leave their listeners feeling strong, alive, and inspired."
+  },
+  {
+    name: "Rivers of Nihil",
+    city: "PHILADELPHIA",
+    genre: "METAL",
+    bio: "The Reading, PA quintet announced themselves as one of the most promising and forward-thinking metal bands in the world today with their first two releases, ‘The Conscious Seed of Light’ (2013) and ‘Monarchy’ (2015). Formed in 2009 by guitarist Brody Uttley, bassist/lyricist Adam Biggs, and vocalist Jake Dieffenbach, Rivers of Nihil quickly made a name for themselves in the death metal scene, attracting the attention of legendary DM titan Erik Rutan. ‘Where Owls Know My Name’ reunites Rivers of Nihil with Monarchy producer Carson Slovak (August Burns Red, The Last Ten Seconds of Life, Candlebox) at Pennsylvania’s Atrium Audio, the studio Slovak co-founded with Grant McFarland (Texas in July, Everclear) a decade ago."
+},
+{
+    name: "Caroline Reese",
+    city: "PHILADELPHIA",
+    genre: "COUNTRY",
+    bio: "Rising alt-country artist Caroline Reese released her new EP, ‘Two Horses,’ on September 8th, 2017. After the ramped-up the indie rock edge of ‘Tenderfoot,’ this four-song EP marks a return to Caroline’s roots in country and folk. Reese deftly captures the ways in which desire plays out across a western landscape, and pain can cross generations like a coal fire sweeps across the land. Caroline Reese and her band, the Drifting Fifth, have have toured nationally and opened for Grammy nominees and winners including Chris Stapleton and Brandi Carlile. Reese has also opened up for Americana stalwarts John Hiatt, Ray Wylie Hubbard, Corb Lund, Chely Wright, Lindi Ortega, and Shannon McNally. Caroline grew up in Reading, Pennsylvania, where the rust belt meets Amish country. She traces the old-soul tendencies in her songs to her upbringing; her mom ran a horse farm and her dad sold antiques. She currently lives in Montana."
+},
+{
+    name: "Whitney Peyton",
+    city: "PHILADELPHIA",
+    genre: "HIP-HOP",
+    bio: "Whitney Peyton is a hip-hop artist with a firecracker flow from the outskirts of Philadelphia, PA. Stay tuned for her next fire release coming soon!"
+},
+{
+    name: "Dayne Jordan",
+    city: "PHILADELPHIA",
+    genre: "RAP",
+    bio: "Dayne Jordan formerly known as Dosage is an independent hip-hop recording artist from Philadelphia, PA. He has been active since 2004, releasing music and performing all over the globe. In 2008, Dayne Jordan linked up with one of his biggest influences, Lupe Fiasco whom he would later join on tour for Lupe’s, Steppin Lasers tour. Dayne has also opened for many artists including The Roots, Lupe Fiasco, Dom Kennedy and more. Dayne also produce and host several music events under his, No Place Like Home series around the world. When he’s not in the studio, you can find Dayne Jordan touring the globe, taking fans on a musical journey as the MC for DJ Jazzy Jeff."
+},
+{
+    name: "Bethlehem and Sad Patrick",
+    city: "PHILADELPHIA",
+    genre: "POP",
+    bio: "Bethlehem and Sad Patrick perform songs of love and other struggles. Combining her soaring vocals and driving percussion with his sparse guitar, they deliver powerful songs about being in and out of love, keeping your head up in the city, struggling to make your way, and seeking peace on the margins. Sad Patrick’s hybrid of folk, blues and jazz playing supports Bethlehem’s “vocussion” – her powerful singing, remarkable improvisations and nuanced melodies riding atop her tarima stomps and body percussion. Their live shows are enthralling, with their on-the-spot interplay and how fully Bethlehem inhabits their songs and captivates a crowd."
+}
+];
