@@ -2,13 +2,29 @@
     color: white;
     font-family: 'Lato', sans-serif;
   }
+
+  body {
+    background: url(assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  }
+
+  #emergence:hover {
+    cursor: pointer;
+  }
   
   #mainimage {
-      background: url("assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg");
+      /*background: url("assets/img/yannis-papanastasopoulos-yWF2LLan-_o-unsplash.jpg");*/
       width: 100%;
       padding-top: 100px;
-      background-size: cover;
+      /*background-size: cover;*/
       height: 100vh;
+  }
+
+  main {
+    margin-left: 25vw;
   }
   
   img {
@@ -52,3 +68,121 @@
   .sample {
       width: 100%;
   }
+
+  #emergence {
+    font-size: 25px; 
+    color:white; 
+    margin-top: 15px;
+    font-weight: bold;
+    letter-spacing: 5px;
+}
+
+#tagline {
+    font-weight: 300;
+    color: rgb(22, 254, 22);
+    font-size: 20px;
+    margin-left: 20px;
+    letter-spacing: 2px;
+}
+
+.navbar-toggler {
+    border: none;
+}
+
+#saved {
+    margin-top: -7vh;
+    font-size: 50px;
+}
+
+.btn-group {
+  background-color: black;
+}
+
+.fa-bars {
+    transform: scale(1.75);
+    margin-right: 5px;
+}
+
+.dropdown-menu {
+    background-color: black;
+    font-size: 18px;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+.dropdown-item, .delete:hover {
+    cursor: pointer;
+}
+
+#dropdown-header:hover {
+    background-color: black !important;
+    color: white !important;
+    cursor: default;
+}
+
+.fa-backspace:hover {
+    color: rgb(22, 254, 22);
+}
+
+.navbar {
+  background-color: black;
+  z-index: 5;
+}
+
+.bio {
+  text-shadow: 5px 5px 10px rgb(55, 53, 53);
+  background-color: black;
+  border-radius: 30px;
+  opacity: 0.8;
+  padding: 10px;
+  font-size: 1.5vw;
+  width: 100%;
+}
+
+#bio-section {
+  margin-left: 2vw;
+  width: 50vw;
+  min-width: 400px;
+  text-align: center;
+}
+
+.artist-name {
+  font-size: 7vw;
+  padding-top: 2vh;
+}
+
+#charts {
+  margin-top: 15vh;
+  margin-left: 25vw;
+  width: 100%;
+}
+
+#toptracks {
+  margin-left: 12.5vw;
+}
+
+.pop {
+  color: rgb(248, 43, 156);
+}
+
+.rock {
+  color: rgb(67, 246, 238);
+}
+
+.rap {
+  color: rgb(185, 42, 247);
+}
+
+.hip-hop {
+  color: rgb(22, 254, 22);
+}
+
+.country {
+  color: rgb(241, 37, 56);
+}
+
+.metal {
+  color: rgb(242, 92, 1);
+}
