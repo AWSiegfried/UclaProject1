@@ -1,5 +1,10 @@
 body { 
     font-family: 'Lato', sans-serif;
+    background: url(assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
 #emergence {
@@ -56,9 +61,9 @@ body {
 }
 
 #mainimage {
-    background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");
+    /*background: url("assets/img/aditya-chinchure-ZhQCZjr9fHo-unsplash.jpg");*/
     width: 100%;
-    background-size: cover;
+    /*background-size: cover;*/
     height: 100vh;
     padding-top: 100px;
 }
@@ -140,6 +145,12 @@ img {
       }
       #center {
           margin-left: 5%;
+      }
+  }
+
+  @media (max-width: 581px) {
+      .dropdown {
+          margin-left: 36vw;
       }
   }
 

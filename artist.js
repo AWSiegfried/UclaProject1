@@ -4,32 +4,62 @@ $(document).ready(function() {
     console.log(artist);
     for (var i = 0; i < artistArray.length; i++) {
         if (artistArray[i].name === artist) {
-            $(".artist-name").text("Emergence - " + artistArray[i].name);
+            $("#artist-page").text("Emergence - " + artistArray[i].name);
+            $(".artist-name").text(artistArray[i].name);
             $(".bio").text(artistArray[i].bio);
             genre = artistArray[i].genre;
+            switch (genre) {
+                case 'POP':
+                    $(".artist-name").addClass("pop");
+                    $("#toptracks").addClass("pop");
+                    break;
+                case 'ROCK':
+                    $(".artist-name").addClass("rock");
+                    $("#toptracks").addClass("rock");
+                    break;
+                case 'RAP':
+                    $(".artist-name").addClass("rap");
+                    $("#toptracks").addClass("rap");
+                    break;
+                case 'HIP-HOP':
+                    $(".artist-name").addClass("hip-hop");
+                    $("#toptracks").addClass("hip-hop");
+                    break;
+                case 'COUNTRY':
+                    $(".artist-name").addClass("country");
+                    $("#toptracks").addClass("country");
+                    break;
+                case 'METAL':
+                    $(".artist-name").addClass("metal");
+                    $("#toptracks").addClass("metal");
+                    break;
+                default:
+                    return;
+                    break;
+            }
         }
     }
 
     var artistName = artist.split(" ").join("+");
-    var apiKey = "AIzaSyA-K-uygPmNrWN_08VKkrItCo9J0R9P8RA";
-    var youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + artistName + "+" + genre + "+music" + "&key=" + apiKey;
-    console.log(youtubeURL);
-$.ajax({
-    url: youtubeURL,
-    method: "GET"
-}).then(function(response) {
-    console.log(response);
-    var results = response.items;
-    function checkVideo() {
-        for (var i = 0; i < results.length; i++) {
-            if (results[i].id.kind === "youtube#video") {
-                return results[i].id.videoId;
-            }
-        }
-    };
-    var videoSrc = "https://www.youtube.com/embed/" + checkVideo();
-    $("#youtube").attr("src", videoSrc);
-})
+//     var apiKey = "AIzaSyA-K-uygPmNrWN_08VKkrItCo9J0R9P8RA";
+//     var youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + artistName + "+" + genre + "+music" + "&key=" + apiKey;
+//     console.log(youtubeURL);
+// $.ajax({
+//     url: youtubeURL,
+//     method: "GET"
+// }).then(function(response) {
+//     console.log(response);
+//     var results = response.items;
+//     function checkVideo() {
+//         for (var i = 0; i < results.length; i++) {
+//             if (results[i].id.kind === "youtube#video") {
+//                 return results[i].id.videoId;
+//             }
+//         }
+//     };
+//     var videoSrc = "https://www.youtube.com/embed/" + checkVideo();
+//     $("#youtube").attr("src", videoSrc);
+// })
 
 
 
@@ -55,7 +85,7 @@ $.ajax({
                 url: queryURLSearch,
                 method: "GET"
             }).then(function(response) {
-                // console.log(response);
+                 console.log(response);
                 //THIS IS THE URI - response.artists.items[0].id
                 // console.log(response.artists.items[0].id);
     
@@ -66,7 +96,10 @@ $.ajax({
                 //Get Top Tracks via the URI
                 var artistURI = response.artists.items[0].id;
                 var queryTopTracks = "https://api.spotify.com/v1/artists/" + artistURI + "/top-tracks?country=US";
-    
+                
+                var embedSrc = "https://open.spotify.com/embed/artist/" + artistURI
+                $("#embedlink").attr("src", embedSrc);
+
                 $.ajax({
                     crossDomain: true,
                     headers: { "Content-Type": "application/json", "Authorization": "Bearer " + accessToken },
@@ -80,9 +113,11 @@ $.ajax({
                     songPlayer.attr("id", "js-player")
                     songPlayer.attr("src", response.tracks[0].preview_url);
                     songPlayer.attr("controls", "controls");
+                    var songTitle = $("<p>");
+                    songTitle.text(response.tracks[0].name);
                     // songPlayer.attr("autoplay", "Y")
                     // console.log(songPlayer);
-                    $("#song-goes-here").append(songPlayer);
+                    $("#song-goes-here").append(songPlayer, songTitle);
     
                     //Beginning Journey to create graphs
                     //Pull track id for top ten (max) songs
@@ -207,6 +242,11 @@ $.ajax({
                             var chart = JSC.chart('chartDiv1', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {color: 'black'}
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -215,14 +255,17 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(248, 43, 156)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
                                             size: 40,
                                             outline_width: 0
                                         },
-                                        label: { text: '%value' }
+                                        label: { 
+                                            text: '%value',
+                                            'font-size': '32px'
+                                     }
                                     },
     
                                     points: [{
@@ -242,6 +285,11 @@ $.ajax({
                             var chart = JSC.chart('chartDiv2', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {color: 'black'}
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -250,7 +298,7 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(67, 246, 238)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
@@ -271,6 +319,11 @@ $.ajax({
                             var chart = JSC.chart('chartDiv3', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {color: 'black'}
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -279,7 +332,7 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(185, 42, 247)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
@@ -300,6 +353,11 @@ $.ajax({
                             var chart = JSC.chart('chartDiv4', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {color: 'black'}
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -308,7 +366,7 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(22, 254, 22)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
@@ -329,6 +387,11 @@ $.ajax({
                             var chart = JSC.chart('chartDiv5', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {color: 'black'}
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -337,7 +400,7 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(241, 37, 56)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
@@ -358,6 +421,14 @@ $.ajax({
                             var chart = JSC.chart('chartDiv6', {
                                 debug: true,
                                 defaultSeries_type: 'column',
+
+                                chartArea: {
+                                    fill: {
+                                        color: 'gray',
+                                        opacity: 0.1
+                                    }
+                                },
+
                                 yAxis: {
                                     defaultTick_enabled: false,
                                     scale_range_padding: 0.15,
@@ -366,7 +437,7 @@ $.ajax({
                                 legend_visible: false,
                                 toolbar_visible: false,
                                 series: [{
-                                    color: 'turquoise',
+                                    color: 'rgb(242, 92, 1)',
                                     defaultPoint: {
                                         marker: {
                                             visible: true,
@@ -414,6 +485,9 @@ $.ajax({
             window.location.href = redirect;
         })
 
+        $("#emergence").on("click", function() {
+            window.location.href = "./yess.html";
+        })
 });
 
 
