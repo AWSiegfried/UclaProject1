@@ -64,11 +64,11 @@ Github - https://github.com/AWSiegfried/Emergence_v1
 
 ## Screenshots
 
-![screenshot](Assets/img/emergence-homepage.png?raw=true)
+![screenshot](assets/img/emergence-homepage.png?raw=true)
 
-![screenshot](Assets/img/emergence-artistpage.png?raw=true)
+![screenshot](assets/img/emergence-artistpage.png?raw=true)
 
-![screenshot](Assets/img/emergence-audio-features.png?raw=true)
+![screenshot](assets/img/emergence-audio-features.png?raw=true)
 
 ## License
 
