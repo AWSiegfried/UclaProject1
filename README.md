@@ -62,6 +62,8 @@ Live application - https://awsiegfried.github.io/Emergence_v1/
 
 Github - https://github.com/AWSiegfried/Emergence_v1
 
+Presentation - https://docs.google.com/presentation/d/1xpHt01u-ECyeOtN9Wl1vAlGvzpODCszSN6gNuW5l5rg/edit#slide=id.p
+
 ## Screenshots
 
 ![screenshot](assets/img/emergence-homepage.png?raw=true)
