@@ -90,7 +90,7 @@ $(document).ready(function() {
 
     // For the sake of the API searches, any spaces are replaced with a plus sign
     var artistName = artist.split(" ").join("+");
-    var apiKey = "AIzaSyDL8ew7O8_rxzBiXZT40qqMILqCOsQN-5c";
+    var apiKey = "AIzaSyCqnTeBwerTPbG_YE5Thd1tXFmNm0vx4zI";
     var youtubeURL = "https://www.googleapis.com/youtube/v3/search?part=snippet&q=" + artistName + "+" + genre + "+music" + "&key=" + apiKey;
     $.ajax({
         url: youtubeURL,
